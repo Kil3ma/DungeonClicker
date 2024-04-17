@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.dungeonclicker</groupId>
-	<artifactId>demo</artifactId>
+	<artifactId>DungeonClicker</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo</name>
+	<name>DungeonClicker</name>
 	<description>DungeonClicker Game</description>
 	<properties>
 		<java.version>21</java.version>
