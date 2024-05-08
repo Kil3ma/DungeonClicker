@@ -1,9 +1,20 @@
 package com.dungeonclicker.model;
 
+import com.dungeonclicker.model.enums.SquareType;
+
 public class Square {
     private int x;
     private int y;
     private boolean revealed;
+    private SquareType squareType = SquareType.EMPTY;
+
+    public SquareType getSquareType() {
+        return squareType;
+    }
+
+    public void setSquareType(SquareType squareType) {
+        this.squareType = squareType;
+    }
 
     public int getX() {
         return x;
@@ -27,5 +38,10 @@ public class Square {
 
     public void setRevealed(boolean revealed) {
         this.revealed = revealed;
+    }
+
+    public void setPosition(Square square){
+        setX(square.getX());
+        setY(square.getY());
     }
 }
