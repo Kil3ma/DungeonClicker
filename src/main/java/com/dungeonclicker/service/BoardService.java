@@ -9,8 +9,9 @@ public class BoardService {
     public Board getBoardDependsOnLevel (int level){
         Board board = new Board();
         if(level % 2 == 0){
-            board.setLength(board.getLength() + level/2);
-            board.setWidth(board.getWidth() + level/2);
+            int length = board.getLength() + level/2;
+            int width = board.getWidth() + level / 2;
+            board = new Board(width, length);
         }
         else{
             return getBoardDependsOnLevel(level - 1);

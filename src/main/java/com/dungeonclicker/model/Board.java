@@ -12,10 +12,17 @@ public class Board {
     private int length;
     private Square[][] squares;
 
-    public Board (){
+    public Board () {
         this.width = 3;
         this.length = 3;
-        this.squares = new Square[this.width][this.length];
+        setupEmptyBoard();
+        setExit();
+    }
+
+    public Board (int width, int length) {
+        this.width = width;
+        this.length = length;
+        setupEmptyBoard();
         setExit();
     }
 
@@ -23,18 +30,8 @@ public class Board {
         return width;
     }
 
-    public void setWidth(int width) {
-        this.width = width;
-        this.squares = new Square[this.width][this.length];
-    }
-
     public int getLength() {
         return length;
-    }
-
-    public void setLength(int length) {
-        this.length = length;
-        this.squares = new Square[this.width][this.length];
     }
 
     public Square[][] getSquares() {
@@ -74,6 +71,17 @@ public class Board {
 
     private int randomNumber(int min, int max){
         return (int) ((Math.random() * (max - min)) + min);
+    }
+
+    private void setupEmptyBoard() {
+        squares = new Square[width][length];
+        for (int i = 0; i < width; i++) {
+            for (int j = 0; j < length; j++) {
+                squares[i][j] = new Square();
+                squares[i][j].setX(i);
+                squares[i][j].setY(j);
+            }
+        }
     }
 
     private void setExit(){
